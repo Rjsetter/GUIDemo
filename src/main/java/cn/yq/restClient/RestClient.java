@@ -201,8 +201,8 @@ public class RestClient {
     }
 
     public static void main(String [] args)throws IOException{
-        String Cookie = "IDB_BETA_UID=D%0AAwMTE5MDk%3DM-%3D1548989086-%3Dcf6376cb9edb699bdb82f75bbf714500";
-        String URL = "http://idb.zhonganonline.com";
+        String Cookie = "";
+        String URL = "";
         HashMap<String, String> headermap = new HashMap<String, String>();
         headermap.put("Content-Type", "application/json");
         headermap.put("Cookie", Cookie);
@@ -211,7 +211,7 @@ public class RestClient {
         int statusCode = closeableHttpResponse.getStatusLine().getStatusCode();
         String responseString = EntityUtils.toString(closeableHttpResponse.getEntity(), "UTF-8");
         System.out.println(responseString);
-        if(responseString.contains("众安统一登录")){
+        if(responseString.contains("统一登录")){
             System.out.println("SDSADSADASDASDASD");
         }
 

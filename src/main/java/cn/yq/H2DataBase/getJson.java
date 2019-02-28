@@ -16,8 +16,8 @@ import java.util.Map;
 public class getJson {
     public static Map<String,String>TABLE_VALUE() throws IOException {
         Map<String,String> TABLE_COMPANY = new LinkedHashMap<String, String>();
-        String Cookie = "IDB_BETA_UID=D%0AAwMTE5MDk%3DM-%3D1548989086-%3Dcf6376cb9edb699bdb82f75bbf714500";
-        String URLBASE = "http://idb.zhonganonline.com/dbs?dbenv=";
+        String Cookie = "";
+        String URLBASE = "";
         String ENV = "prd";
         String URL = URLBASE+ENV;
         HashMap<String, String> headermap = new HashMap<String, String>();

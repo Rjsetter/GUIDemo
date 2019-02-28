@@ -81,8 +81,8 @@ public class BEPanel {
      */
     public static void setLisetner(){
         //idb和jira的URL地址，用于鉴定COOKIE是否有效
-        final String idbUrl = "http://idb.zhonganonline.com";
-        final String jiraUrl = "http://jira.zhonganonline.com/browse/CXYWZX-6337";
+        final String idbUrl = "";
+        final String jiraUrl = "";
         //监听jiraIdb更新事件
         jiraButton.addActionListener(new ActionListener() {
             @Override
@@ -145,7 +145,7 @@ public class BEPanel {
         closeableHttpResponse = RestClient.get(URL,headermap);
         String responseString = EntityUtils.toString(closeableHttpResponse.getEntity(), "UTF-8");
         System.out.println(responseString);
-        if(responseString.contains("众安统一登录")||responseString.contains("噢！遇到了一个错误。")){
+        if(responseString.contains("统一登录")||responseString.contains("噢！遇到了一个错误。")){
             return false;
         }
         return true;

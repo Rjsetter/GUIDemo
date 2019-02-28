@@ -6,7 +6,7 @@ import java.awt.event.*;
 
 import static cn.yq.GUI.BEPanel.getBEPanel;
 import static cn.yq.GUI.JIRAPanel.getJIRAPanel;
-import static cn.yq.GUI.MSGPanel.getMSGPanel;
+
 
 /**
  * 主程序

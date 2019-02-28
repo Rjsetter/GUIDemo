@@ -28,8 +28,8 @@ public class Idb {
     public static void idb(String dbenv,String dbname, String tbname,String sql)throws IOException {
         CloseableHttpResponse closeableHttpResponse;
         RestClient restClient = new RestClient();
-        String Url = "http://idb.zhonganonline.com/getqueryrst";
-        String Cookie = "IDB_BETA_UID=D%0AAwMTE5MDk%3DM-%3D1548222486-%3Db352c8d4c273fb713c60f27467f3f623";
+        String Url = "";
+        String Cookie = "";
         String splitcol = "-1";
         String splitcolmode = "=";
         String selectmod = "1";

@@ -258,7 +258,7 @@ public class MSGPanel extends JFrame implements ActionListener {
         CloseableHttpResponse closeableHttpResponse;
         RestClient restClient = new RestClient();
         //访问的接口地址
-        String Url = "http://idb.zhonganonline.com/getqueryrst";
+        String Url = "";
         String dbname = "nereus";
         String tbname = "nereus_message_sent";
         String sql = "receiver_no ='"+phone +"'";

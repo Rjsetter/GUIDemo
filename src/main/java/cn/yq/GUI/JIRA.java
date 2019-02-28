@@ -45,7 +45,7 @@ public class JIRA {
         //请求地址
         SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");//设置日期格式
         String date = df.format(new Date())+".xls";// new Date()为获取当前系统时间，也可使用当前时间戳
-        String URLBASE = "http://jira.zhonganonline.com/browse/";
+        String URLBASE = "";
         //Excel第一行标题
         List<String> firstLineTitle = selectedTypeList;
         //存放JIRA需求号
@@ -108,27 +108,15 @@ public class JIRA {
 
 
     public static void main(String [] args) throws IOException {
-        String Cookie = "d_cookie=435091789; session=.eJxNkMFOwzAMht8l5wrZaeIkO3HlwhNUQmmTjko0LesibUx7d-yKARdL_vL__u3cVN3ySR1ualjmNZbrS1IHhYAGwKrmQV_jnJl31Yzoump7H7g67bvqcj921Set-TVHJ5qUuhqIWOMhovCRCTkIwi2wF2ng2o5eQup2llyDgdCYRqW8xtN5zmXHGFpA95_-rkPJ9BzSJ9k1z3H6YLxd3q75c4rl-Pz1vpRjLE98BgsmGQZek21UeYzgHYjr2EZWlGX3A2jkbmW3iNA5jTpYbIHpli-70dnWSStTVcwJh4EA4hCMp-S5aO9NMr4FIrlSPvon9W9Ddb9_A5h3c-E.DywAyw.MZrF-dPj6m5lnT19sbbtGpIToA4; zaSSO=\"2tPLzkDVY/zxlRwYsTZmKQ==\"; zaEmail=\"jtd36NMDoFJ5VSNOBRq7O4nN27nWwF//ht8T3KT4Gis=\"; zaRealname=\"2tPLzkDVY/zxlRwYsTZmKQ==\"; JSESSIONID=D84927CFF08E63A31568A8FF6A21C914; atlassian.xsrf.token=B280-RV1Y-OTO9-POVL|5ff6de3814d6dac7c333600b17cc0a7a889d4416|lin";
-        String URLBASE = "http://jira.zhonganonline.com/browse/";
+        String Cookie = "";
+        String URLBASE = "";
 
         //Excel第一行标题
         List<String> firstLineTitle = new LinkedList<String>();
-        firstLineTitle.add("JIRA号");
-        firstLineTitle.add("需求名称");
-        firstLineTitle.add("需求类型");
-        firstLineTitle.add("状态");
-        firstLineTitle.add("优先级");
-        firstLineTitle.add("报告人");
-        firstLineTitle.add("开发负责人");
-        firstLineTitle.add("开发人员");
-        firstLineTitle.add("测试负责人");
-        firstLineTitle.add("测试人员");
-        firstLineTitle.add("预计提测时间");
+
         //存放JIRA需求号
         List<String> JIRA = new LinkedList<String>();
-        JIRA.add("CXYWZX-4049");
-        JIRA.add("CXYWZX-4073");
-        JIRA.add("CXJGXM-1818");
+
         //存放JIRA需求号与需求号对应的信息
         Map<String,List<String>> MSG = new HashMap<String, List<String>>();
         for(int index=0;index<JIRA.size();index++){
@@ -137,17 +125,7 @@ public class JIRA {
             //System.out.println(responseString);
             Document doc =  Jsoup.parse(responseString);
             List<String> JIRAMsg = new LinkedList<String>();
-            JIRAMsg.add(doc.select("#key-val").text());
-            JIRAMsg.add(doc.select("#summary-val").text());
-            JIRAMsg.add(doc.select("#type-val").text());
-            JIRAMsg.add(doc.select("#status-val").text());
-            JIRAMsg.add(doc.select("#priority-val").text());
-            JIRAMsg.add(doc.select("#customfield_10314-val").text());
-            JIRAMsg.add(doc.select("#customfield_10423-val").text());
-            JIRAMsg.add(doc.select("#customfield_10416-val").text());
-            JIRAMsg.add(doc.select("#customfield_10312-val").text());
-            JIRAMsg.add(doc.select("#customfield_10421-val").text());
-            JIRAMsg.add(doc.select("#customfield_10900-val").text());
+
             MSG.put(JIRA.get(index),JIRAMsg);
         }
         createExecel("JIRA测试",firstLineTitle,MSG);
